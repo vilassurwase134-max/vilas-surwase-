@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>प्रशिक्षक विकास संस्था | महाराष्ट्र</title>
+<style>
+:root{
+ --site-primary:#123B63; --site-secondary:#E39A2D; --site-background:#F6F8FB;
+ --site-on-primary:#FFFFFF; --site-on-secondary:#17202A; --site-on-background:#17202A;
+ --site-font-body:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;
+ --site-font-heading:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;
+ --site-heading-scale:1; --site-spacing-scale:1; --site-radius-scale:1;
+ --site-decoration-opacity:1;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--site-font-body);background:var(--site-background);color:var(--site-on-background);line-height:1.55}
+#app{min-height:100vh;background-color:var(--site-background);border-radius:0}
+.container{width:min(1160px,92%);margin:auto}
+.top{background:var(--site-primary);color:var(--site-on-primary);font-size:13px}
+.top .container{display:flex;justify-content:space-between;gap:16px;padding:7px 0}
+header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid #e5e9ef}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--site-primary)}
+.logo{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--site-secondary);color:#fff;font-size:22px}
+.brand small{display:block;font-weight:500;color:#65707c}
+nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+nav a{padding:8px 10px;border-radius:8px;text-decoration:none;color:#25313c;font-weight:650;font-size:14px}
+nav a:hover{background:#edf3f8;color:var(--site-primary)}
+.menu{display:none}
+.hero{background:linear-gradient(135deg,var(--site-primary),#1e608e);color:#fff;padding:66px 0 58px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:330px;height:330px;border:55px solid rgba(255,255,255,.08);border-radius:50%;right:-110px;top:-120px;opacity:var(--site-decoration-opacity)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:38px;align-items:center}
+.kicker{color:#ffd78c;font-weight:800;letter-spacing:.6px}
+h1{font-family:var(--site-font-heading);font-size:calc(46px * var(--site-heading-scale));line-height:1.1;margin:10px 0 17px}
+.hero p{font-size:18px;max-width:700px;color:#eaf4fb}
+.btn{display:inline-block;padding:11px 17px;border-radius:10px;text-decoration:none;font-weight:800;margin:7px 6px 0 0}
+.btn.primary{background:var(--site-secondary);color:#fff}.btn.light{background:#fff;color:var(--site-primary)}
+.hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:24px;border-radius:18px;backdrop-filter:blur(4px)}
+.hero-card strong{font-size:34px;display:block}.hero-card span{color:#dcecf7}
+section{padding:54px 0}
+.section-head{text-align:center;margin-bottom:27px}
+.section-head h2{font-size:calc(30px * var(--site-heading-scale));margin:0 0 7px;color:var(--site-primary)}
+.section-head p{margin:0;color:#65717c}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e4e9ef;border-radius:calc(15px * var(--site-radius-scale));padding:21px;box-shadow:0 5px 20px rgba(20,50,80,.05)}
+.card .icon{font-size:29px}.card h3{margin:8px 0 5px;color:var(--site-primary)} .card p{margin:0;color:#65717c;font-size:14px}
+.stats{background:#fff;border-block:1px solid #e6ebf0}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}.stat{padding:25px;border-right:1px solid #e7ebef}.stat:last-child{border:0}.stat b{display:block;font-size:31px;color:var(--site-primary)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.about-box{background:#fff;border-radius:18px;padding:28px;border:1px solid #e4e9ef}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:17px}.checks div{background:#f4f7fa;padding:11px;border-radius:9px}
+.districts{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.district{background:#fff;border:1px solid #e4e9ef;border-radius:13px;padding:16px;display:flex;justify-content:space-between;align-items:center}.district b{color:var(--site-primary)}
+.activity{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.activity .card{padding:0;overflow:hidden}.photo{height:135px;background:linear-gradient(135deg,#dce9f2,#f8dca9);display:grid;place-items:center;font-size:44px}.activity .content{padding:17px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery div{height:150px;border-radius:12px;background:linear-gradient(135deg,#d8e6ef,#f2c986);display:grid;place-items:center;font-size:36px}
+.leaders,.divisions,.opportunities{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.leader,.division,.opportunity{background:#fff;border:1px solid #e4e9ef;border-radius:14px;padding:18px}.leader h3,.division h3,.opportunity h3{margin:0 0 5px;color:var(--site-primary)}.leader p,.division p,.opportunity p{margin:0;color:#65717c;font-size:14px}.badge{display:inline-block;background:#eef4f8;color:var(--site-primary);padding:5px 9px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:8px}
+.cta{background:var(--site-primary);color:#fff}.cta .section-head h2{color:#fff}.contact{display:grid;grid-template-columns:1fr 1fr;gap:22px}.contact-box{background:#fff;border:1px solid #e3e8ee;border-radius:16px;padding:23px}.contact-row{padding:10px 0;border-bottom:1px solid #edf0f3}.contact-row:last-child{border:0}
+footer{background:#0d2943;color:#d9e7f1;padding:30px 0}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}footer h3{color:#fff;margin-top:0}footer a{color:#d9e7f1;text-decoration:none;display:block;margin:6px 0}
+@media(max-width:900px){nav{display:none}.menu{display:block;background:var(--site-primary);color:#fff;border:0;padding:9px 12px;border-radius:8px}.hero-grid,.about,.contact{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.districts,.activity,.leaders,.divisions,.opportunities{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.top .container{display:block}.top span{display:block}.hero{padding:48px 0}.hero h1{font-size:36px}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border:0}.cards,.districts,.activity,.leaders,.divisions,.opportunities,.gallery,.footer-grid{grid-template-columns:1fr}.gallery div{height:180px}.checks{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="top"><div class="container"><span>नोंदणी क्र. MH/70/2026 अ.नगर | F-25379</span><span>महाराष्ट्रातील प्रशिक्षकांसाठी राज्यस्तरीय व्यासपीठ</span></div></div>
+<header><div class="container nav">
+<div class="brand"><div class="logo">प्र</div><div>प्रशिक्षक विकास संस्था<small>Maharashtra Trainer Development Association</small></div></div>
+<button class="menu" onclick="toggleNav()">☰ मेनू</button>
+<nav id="nav"><a href="#home">मुख्यपृष्ठ</a><a href="#about">संस्थेविषयी</a><a href="#work">कार्यक्रम</a><a href="#leadership">कार्यकारणी</a><a href="#divisions">विभाग</a><a href="#districts">जिल्हे</a><a href="#membership">सदस्यत्व</a><a href="#activities">Activity</a><a href="#gallery">Gallery</a><a href="#opportunities">संधी</a><a href="#contact">संपर्क</a></nav>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div><div class="kicker">INSPIRE • EMPOWER • LEAD • TRANSFORM</div>
+<h1>प्रशिक्षकांच्या विकासातून<br>प्रशिक्षणाची गुणवत्ता वाढवूया.</h1>
+<p>महाराष्ट्रातील अनुभवी, प्रवीण आणि कौशल्याधारित प्रशिक्षकांना एकत्र आणणारे राज्यस्तरीय व्यासपीठ. प्रशिक्षणाच्या संधी, नेटवर्किंग, क्षमता विकास आणि न्याय्य मानधनासाठी एकत्रित प्रयत्न.</p>
+<a class="btn primary" href="#contact">संपर्क करा</a><a class="btn light" href="#work">आमचे कार्य पहा</a></div>
+<div class="hero-card"><strong>500+</strong><span>नोंदणीकृत प्रशिक्षक</span><hr><strong>36</strong><span>जिल्ह्यांपर्यंत पोहोच</span><hr><strong>6</strong><span>विभागीय नेटवर्क</span></div>
+</div></section>
+
+<section class="stats"><div class="container stats-grid"><div class="stat"><b>500+</b>प्रशिक्षक</div><div class="stat"><b>36</b>जिल्हे</div><div class="stat"><b>6</b>विभाग</div><div class="stat"><b>20+</b>वर्षांचा अनुभव</div></div></section>
+
+<section id="about"><div class="container about"><div><div class="section-head" style="text-align:left"><h2>संस्थेविषयी</h2><p>एकत्रित प्रशिक्षक शक्ती • गुणवत्तापूर्ण प्रशिक्षण • सामाजिक परिवर्तन</p></div>
+<p>प्रशिक्षक विकास संस्था ही महाराष्ट्रातील प्रशिक्षकांना संघटित करून त्यांच्या व्यावसायिक विकासासाठी आणि प्रशिक्षण क्षेत्रातील संधी वाढवण्यासाठी कार्य करणारी राज्यस्तरीय संस्था आहे.</p>
+<div class="checks"><div>✓ प्रशिक्षकांचे नेटवर्क</div><div>✓ क्षमता विकास</div><div>✓ प्रशिक्षणाच्या संधी</div><div>✓ विभागीय समन्वय</div><div>✓ दर्जेदार प्रशिक्षण</div><div>✓ शासन/CSR समन्वय</div></div></div>
+<div class="about-box"><h3>आमचे ध्येय</h3><p>प्रशिक्षकांना एकत्र आणणे, त्यांचे कौशल्य अद्ययावत करणे, नवीन प्रशिक्षण संधी उपलब्ध करून देणे आणि महाराष्ट्रातील प्रशिक्षण व्यवस्थेला अधिक सक्षम बनवणे.</p><h3>आमची भूमिका</h3><p>शासन विभाग, CSR संस्था, NGO, शैक्षणिक संस्था आणि प्रशिक्षक यांच्यात प्रभावी समन्वय निर्माण करणे.</p></div></div></section>
+
+<section id="work" style="background:#eef4f8"><div class="container"><div class="section-head"><h2>आमचे प्रमुख कार्यक्षेत्र</h2><p>जिल्हा ते राज्य पातळीवर प्रशिक्षक विकासाची व्यापक रचना</p></div>
+<div class="cards"><div class="card"><div class="icon">🎓</div><h3>Trainer Development</h3><p>प्रशिक्षकांसाठी नेतृत्व, कौशल्य, व्यक्तिमत्त्व व प्रशिक्षण तंत्र विकास.</p></div><div class="card"><div class="icon">🏛️</div><h3>Government Training</h3><p>शासकीय योजना व कार्यक्रमांसाठी प्रशिक्षण उपक्रम आणि विभागीय समन्वय.</p></div><div class="card"><div class="icon">🤝</div><h3>CSR & NGO</h3><p>CSR, NGO आणि संस्थांसोबत प्रशिक्षण व समुदाय विकास प्रकल्प.</p></div><div class="card"><div class="icon">🌱</div><h3>Community Development</h3><p>PRA, micro-planning, पंचायत राज आणि ग्रामविकासाशी संबंधित उपक्रम.</p></div></div></div></section>
+
+<section id="districts"><div class="container"><div class="section-head"><h2>महाराष्ट्रातील जिल्हा नेटवर्क</h2><p>राज्य → विभाग → जिल्हा → तालुका पातळीवरील संघटनात्मक रचना</p></div>
+<div class="districts">
+<div class="district"><b>लातूर</b><span>दखल ✓</span></div><div class="district"><b>धाराशिव</b><span>दखल ✓</span></div><div class="district"><b>नांदेड</b><span>दखल ✓</span></div><div class="district"><b>परभणी</b><span>दखल ✓</span></div><div class="district"><b>नाशिक</b><span>दखल ✓</span></div><div class="district"><b>धुळे</b><span>दखल ✓</span></div><div class="district"><b>नंदुरबार</b><span>दखल ✓</span></div><div class="district"><b>जळगाव</b><span>दखल ✓</span></div><div class="district"><b>वर्धा</b><span>दखल ✓</span></div><div class="district"><b>यवतमाळ</b><span>दखल ✓</span></div><div class="district"><b>अमरावती</b><span>दखल ✓</span></div><div class="district"><b>गोंदिया</b><span>दखल ✓</span></div></div></div></section>
+
+<section id="leadership" style="background:#eef4f8"><div class="container"><div class="section-head"><h2>राज्य कार्यकारणी</h2><p>संस्थेच्या राज्यस्तरीय नेतृत्वाची माहिती</p></div><div class="leaders"><div class="leader"><span class="badge">अध्यक्ष</span><h3>Ashok Sabban</h3><p>राज्यस्तरीय नेतृत्व व मार्गदर्शन</p></div><div class="leader"><span class="badge">उपाध्यक्ष</span><h3>Rahul Bagade</h3><p>संघटनात्मक समन्वय व विस्तार</p></div><div class="leader"><span class="badge">सचिव</span><h3>Vilas Surwase</h3><p>प्रशासन, पत्रव्यवहार व कार्यक्रम समन्वय</p></div><div class="leader"><span class="badge">सहसचिव</span><h3>Govind Vibhute</h3><p>संघटन व जिल्हास्तरीय समन्वय</p></div><div class="leader"><span class="badge">कोषाध्यक्ष</span><h3>Prashant Patil</h3><p>आर्थिक नियोजन व नोंद व्यवस्थापन</p></div><div class="leader"><span class="badge">कार्यकारी सदस्य</span><h3>Mangala More • Varsha Padve</h3><p>राज्य कार्यकारणीतील सहकार्य</p></div></div></div></section>
+
+<section id="divisions"><div class="container"><div class="section-head"><h2>६ विभागीय नेटवर्क</h2><p>विभागीय कार्यकारणीमार्फत जिल्हा पातळीवरील समन्वय</p></div><div class="divisions"><div class="division"><h3>अमरावती विभाग</h3><p>अमरावती • अकोला • बुलढाणा • वाशिम • यवतमाळ</p></div><div class="division"><h3>नागपूर विभाग</h3><p>नागपूर • वर्धा • भंडारा • गोंदिया • चंद्रपूर • गडचिरोली</p></div><div class="division"><h3>नाशिक विभाग</h3><p>नाशिक • धुळे • नंदुरबार • जळगाव • अहिल्यानगर</p></div><div class="division"><h3>पुणे विभाग</h3><p>पुणे • सातारा • सांगली • सोलापूर • कोल्हापूर</p></div><div class="division"><h3>छत्रपती संभाजीनगर विभाग</h3><p>छत्रपती संभाजीनगर • जालना • बीड • लातूर • धाराशिव • नांदेड • परभणी • हिंगोली</p></div><div class="division"><h3>कोकण विभाग</h3><p>मुंबई शहर • मुंबई उपनगर • ठाणे • पालघर • रायगड • रत्नागिरी • सिंधुदुर्ग</p></div></div></div></section>
+
+<section id="activities" style="background:#eef4f8"><div class="container"><div class="section-head"><h2>उपक्रम & Activities</h2><p>प्रशिक्षक विकास, कार्यशाळा आणि जिल्हास्तरीय उपक्रम</p></div>
+<div class="activity"><div class="card"><div class="photo">🎤</div><div class="content"><h3>ARCHITECT OF INFLUENCE</h3><p>Trainer Leadership & Development Workshop — नेतृत्व, प्रभावी संवाद आणि प्रशिक्षक व्यक्तिमत्त्व विकास.</p></div></div><div class="card"><div class="photo">👥</div><div class="content"><h3>जिल्हा प्रशिक्षक मेळावे</h3><p>जिल्हानिहाय नेटवर्क मजबूत करण्यासाठी बैठक, संवाद आणि संघटनात्मक विकास.</p></div></div><div class="card"><div class="photo">📚</div><div class="content"><h3>Training of Trainers</h3><p>प्रशिक्षण पद्धती, facilitation, group dynamics, PRA आणि practical learning.</p></div></div></div></div></section>
+
+<section id="gallery"><div class="container"><div class="section-head"><h2>Gallery</h2><p>कार्यशाळा, बैठका आणि जिल्हास्तरीय उपक्रमांची छायाचित्रे</p></div>
+<div class="gallery"><div>📸<small> Nashik</small></div><div>📸<small> Nandurbar</small></div><div>📸<small> Wardha</small></div><div>📸<small> Chandrapur</small></div><div>📸<small> Solapur</small></div><div>📸<small> Gondiya</small></div><div>📸<small> Trainer Meet</small></div><div>📸<small> Workshop</small></div></div></div></section>
+
+<section id="membership" style="background:#eef4f8"><div class="container"><div class="section-head"><h2>सदस्यत्व नोंदणी</h2><p>महाराष्ट्रातील प्रशिक्षकांनी संस्थेशी जोडण्यासाठी प्राथमिक ऑनलाइन प्रक्रिया</p></div><div class="contact"><div class="contact-box"><h3>सदस्यत्व शुल्क</h3><div class="contact-row"><b>फी:</b> ₹100</div><div class="contact-row">Online Google Form द्वारे नोंदणी</div><div class="contact-row">QR Code / Payment Link द्वारे शुल्क भरण्याची सुविधा</div><a class="btn primary" href="#contact">नोंदणीसाठी संपर्क</a></div><div class="contact-box"><h3>सदस्यासाठी प्रस्तावित सुविधा</h3><div class="contact-row">✓ सदस्य ID / प्रमाणपत्र</div><div class="contact-row">✓ Trainer Directory मध्ये नोंद</div><div class="contact-row">✓ जिल्हा व विभागीय नेटवर्क</div><div class="contact-row">✓ प्रशिक्षण व कामाच्या संधींची माहिती</div><div class="contact-row">✓ कार्यशाळा व क्षमता विकास</div></div></div></div></section>
+
+<section id="opportunities"><div class="container"><div class="section-head"><h2>प्रशिक्षण व कामाच्या संधी</h2><p>शासन • CSR • NGO • शैक्षणिक संस्था यांच्यासोबत प्रशिक्षकांसाठी संधी</p></div><div class="opportunities"><div class="opportunity"><span class="badge">Government</span><h3>शासकीय प्रशिक्षण</h3><p>शासकीय योजना, विभागीय कार्यक्रम, पंचायत राज, क्षमता विकास आणि ToT उपक्रम.</p></div><div class="opportunity"><span class="badge">CSR</span><h3>CSR Projects</h3><p>CSR संस्था व कंपन्यांसाठी PRA, micro-planning, community development आणि training projects.</p></div><div class="opportunity"><span class="badge">NGO</span><h3>NGO & Education</h3><p>NGO, MSW colleges आणि इतर संस्थांसाठी practical training, facilitation व field learning.</p></div></div></div></section>
+
+<section class="cta"><div class="container section-head"><h2>प्रशिक्षक म्हणून आमच्याशी जोडले जा</h2><p style="color:#dcebf5">सदस्यत्व, प्रशिक्षण संधी आणि जिल्हा कार्यकारणीसाठी संपर्क करा.</p><a class="btn primary" href="#contact">संपर्क / सदस्यत्व</a></div></section>
+
+<section id="contact"><div class="container"><div class="section-head"><h2>संपर्क</h2><p>प्रशिक्षक विकास संस्था — महाराष्ट्र</p></div><div class="contact">
+<div class="contact-box"><h3>राज्य कार्यालय</h3><div class="contact-row"><b>सचिव:</b> Vilas Surwase</div><div class="contact-row"><b>मुख्यालय:</b> अहिल्यानगर, महाराष्ट्र</div><div class="contact-row"><b>Email:</b> org.mtda@gmail.com</div><div class="contact-row"><b>नोंदणी:</b> MH/70/2026 अ.नगर, F-25379</div></div>
+<div class="contact-box"><h3>वेबसाईटवरील पुढील सुविधा</h3><div class="contact-row">✓ Online Membership Registration</div><div class="contact-row">✓ QR Code / ₹100 Membership Fee</div><div class="contact-row">✓ Trainer Directory</div><div class="contact-row">✓ District Executive Directory</div><div class="contact-row">✓ Training Calendar & Events</div><div class="contact-row">✓ News / Notices / Downloads</div></div>
+</div></div></section>
+</main>
+
+<footer><div class="container footer-grid"><div><h3>प्रशिक्षक विकास संस्था</h3><p>“प्रशिक्षणातून सशक्तीकरण.. सशक्तीकरणातून परिवर्तन..”</p></div><div><h3>जलद दुवे</h3><a href="#about">संस्थेविषयी</a><a href="#districts">जिल्हे</a><a href="#activities">Activities</a><a href="#gallery">Gallery</a></div><div><h3>संपर्क</h3><p>Vilas Surwase<br>Secretary<br>Ahilyanagar, Maharashtra</p></div></div><div class="container" style="border-top:1px solid #29455d;margin-top:22px;padding-top:15px;font-size:13px">© 2026 प्रशिक्षक विकास संस्था. सर्व हक्क राखीव.</div></footer>
+</div>
+<script>
+function toggleNav(){const n=document.getElementById('nav');n.style.display=n.style.display==='flex'?'none':'flex';n.style.flexDirection='column';n.style.position='absolute';n.style.right='4%';n.style.top='74px';n.style.background='#fff';n.style.padding='10px';n.style.boxShadow='0 8px 25px rgba(0,0,0,.12)';n.style.borderRadius='10px'}
+</script>
+</body></html>
